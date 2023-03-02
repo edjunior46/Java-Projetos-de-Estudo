@@ -38,12 +38,12 @@ public class App {
                 sc.nextLine();
                 String sDate = sc.nextLine();
                 Date fDate = dFormat.parse(sDate);
-                UsedProduct prod = new UsedProduct(pName, pPrice, fDate);
+                Product prod = new UsedProduct(pName, pPrice, fDate);
                 prodList.add(prod);
             } else if (type == 'i') {
                 System.out.print("Customs fee: ");
                 Double cFee = sc.nextDouble();
-                ImportedProduct prod = new ImportedProduct(pName, pPrice, cFee);
+                Product prod = new ImportedProduct(pName, pPrice, cFee);
                 prodList.add(prod);
             }
 
