@@ -1,17 +1,27 @@
-package com.estudos.demo.entities;
+package com.esudos.curso.entities;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "/users")
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
     private String phone;
     private String password;
-
+    
     public User() {
     }
 
@@ -24,7 +34,7 @@ public class User implements Serializable{
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -32,7 +42,7 @@ public class User implements Serializable{
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -40,7 +50,7 @@ public class User implements Serializable{
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -48,7 +58,7 @@ public class User implements Serializable{
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -56,16 +66,11 @@ public class User implements Serializable{
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", password=" + password;
     }
 
     @Override
@@ -86,5 +91,5 @@ public class User implements Serializable{
         }
         return true;
     }
-
+    
 }
